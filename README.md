@@ -1,7 +1,8 @@
 # Movie API
 
 This API will use a third party API which is the MovieDB
-The wesite I will be using for guidance is https://www.themoviedb.org/documentation/api this gives me a breif understanding on how to use the API.
+The wesite I will be using for guidance is https://www.themoviedb.org/documentation/api 
+This gives me a breif understanding on how to use the API.
 The API I have created will pull data from the MovieDB and show in a Html webpage format
 The data I am collecting is what movies are showing in cinema.
 
