@@ -7,9 +7,9 @@ var db = mongoose.connection;
 
 var Schema = mongoose.Schema;
 
-var ClientSchema = mongoose.Schema({
+var UserSchema = mongoose.Schema({
     username: String,
     password: String
 });
 
-mongoose.model('Client',ClientSchema);
+mongoose.model('User',UserSchema);
