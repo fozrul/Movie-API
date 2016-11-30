@@ -1,7 +1,7 @@
 var mongoose = require ('mongoose')
 
-var database = 'moviedb'
-const server = 'mongodb://localhost/moviedb'
+var database = 'movie'
+const server = 'mongodb://localhost/movie'
 mongoose.connect(server,{server:{auto_reconnect:true}});
 var db = mongoose.connection;
 
