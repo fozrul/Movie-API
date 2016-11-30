@@ -13,7 +13,7 @@ server.use(restify.CORS());
 // imports custome module
 
 var film = require("./controller.js")
-var user = require("./user.js")
+var user = require("./client.js")
 
 //REST method
 
