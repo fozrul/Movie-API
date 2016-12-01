@@ -40,17 +40,4 @@ exports.view = function(req, res, next){
                 console.log("Error")
             }
         })
-}
-
- //   console.log(mdata)
- //   if(mdata){
- //       console.log("Success view")
- //       res.json({
- //           type: true,
- //           data: mdata
- //       })
- //   }else{
- //       console.log("Error")
- //   }
-//    });
-//}
+};
