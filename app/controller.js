@@ -3,23 +3,23 @@ var mongoose = require ('mongoose'),
 key = '?api_key=fef1753927fd3fd57cb0d1ef20a63fb8',
 pdata
 
-unirest.get("https://api.themoviedb.org/3/movie/popular"+key)
-.end(function(result){
-pdata = result.raw_body;
-pdata = JSON.parse(pdata)
-pdata = pdata.results
-});
 
-exports.popular = function(req,res,next){
-    if(pdata){
-        console.log("Success")
-        res.json({
-            type: true,
-            data: pdata
+
+exports.popular = function(completion){
+    unirest.get("https://api.themoviedb.org/3/movie/popular"+key)
+        .end(function(result){
+            pdata = result.raw_body
+            pdata = JSON.parse(pdata)
+            pdata = pdata.results
+
+            if(pdata){
+                console.log("Success")
+                // console.log(pdata)
+                completion(pdata)
+            }else{
+                console.log("Error")
+            }
         })
-    }else{
-        console.log("Error")
-    }
 }
 
 exports.view = function(req, res, next){
