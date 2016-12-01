@@ -22,6 +22,8 @@ exports.popular = function(completion){
         })
 }
 
+
+
 exports.view = function(req, res, next){
     var x = req.params['id:']
     var mdata
@@ -30,15 +32,25 @@ exports.view = function(req, res, next){
         mdata = result.raw_body;
         mdata = JSON.parse(mdata)
 
-    console.log(mdata)
-    if(mdata){
-        console.log("Success view")
-        res.json({
-            type: true,
-            data: mdata
+        if(mdata){
+                console.log("Success")
+                // console.log(pdata)
+                completion(mdata)
+            }else{
+                console.log("Error")
+            }
         })
-    }else{
-        console.log("Error")
-    }
-    });
 }
+
+ //   console.log(mdata)
+ //   if(mdata){
+ //       console.log("Success view")
+ //       res.json({
+ //           type: true,
+ //           data: mdata
+ //       })
+ //   }else{
+ //       console.log("Error")
+ //   }
+//    });
+//}
