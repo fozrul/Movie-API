@@ -22,7 +22,7 @@ const userSchema = new Schema({
 exports.User = mongoose.model('User', userSchema)
 
 // create a schema
-const bookSchema = new Schema({
+const movieSchema = new Schema({
 	username: String,
     password: String
 })
