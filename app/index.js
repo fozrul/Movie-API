@@ -1,6 +1,6 @@
 // creates instance using restify
 
-require (`mongoose.js`);
+// require ("mongoose.js");
 var restify = require ('restify');
 var server = restify.createServer();
 
@@ -17,18 +17,25 @@ var user = require("./client.js")
 
 //REST method
 
-server.get('/popular', film.getAllPopular)
-server.post('/popular', film.addPopular)
+// server.get('/popular', film.getAllPopular)
+// server.post('/popular', film.addPopular)
 
-server.get('/popular/:id', film.getPopularItem)
-server.del('/popular/:id', film.deletePopularItem)
-server.put('/popular/:id', film.updatePopularItem)
+server.get('/popular', (req, res, next) => {
+    film.popular((result) => {
+        res.send(200, result)
+        res.end()
+    })
+})
 
-server.get('/films/:id:',film.getFilm)
-server.post('/users', user.register)
+// server.get('/popular/:id', film.getPopularItem)
+// server.del('/popular/:id', film.deletePopularItem)
+// server.put('/popular/:id', film.updatePopularItem)
 
-server.del('/users/:username', user.deleteUser)
-server.put('/users/:username', user.updateUser)
+// server.get('/films/:id:',film.getFilm)
+// server.post('/users', user.register)
+
+// server.del('/users/:username', user.deleteUser)
+// server.put('/users/:username', user.updateUser)
 
 //connecting to port
 

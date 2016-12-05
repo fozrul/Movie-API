@@ -1,6 +1,6 @@
 var request = require ('request')
 var mongoose = require ("mongoose")
-var User = mongoose.model("User")
+// var User = mongoose.model("User")
 
 // registers new users into database
 
