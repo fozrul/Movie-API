@@ -27,6 +27,14 @@ server.get('/popular', (req, res, next) => {
     })
 })
 
+server.post('/popular', (req, res, next) => {
+    film.popular((result) => {
+        res.send(200, result)
+        res.end()
+    })
+})
+
+
 // server.get('/popular/:id', film.getPopularItem)
 // server.del('/popular/:id', film.deletePopularItem)
 // server.put('/popular/:id', film.updatePopularItem)
