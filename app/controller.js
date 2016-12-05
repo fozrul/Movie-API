@@ -1,12 +1,13 @@
 var unirest = require ('unirest')
 var mongoose = require ('mongoose'),
-key = '?api_key=fef1753927fd3fd57cb0d1ef20a63fb8',
+key = 'fef1753927fd3fd57cb0d1ef20a63fb8',
 pdata
 
 
-
+// this is called in the scratchpad.js, it basically pulls the popular data from moviedb
+// in the terminal I type node.scratchpad and it pulls the data through
 exports.popular = function(completion){
-    unirest.get("https://api.themoviedb.org/3/movie/popular"+key)
+    unirest.get(`https://api.themoviedb.org/3/movie/popular?api_key=${key}`)
         .end(function(result){
             pdata = result.raw_body
             pdata = JSON.parse(pdata)

@@ -23,9 +23,10 @@ exports.User = mongoose.model('User', userSchema)
 
 // create a schema
 const movieSchema = new Schema({
-	username: String,
-    password: String
+	title: String,
+	description: String,
+	movieID: String
 })
 
 // create a model using the schema
-exports.User = mongoose.model('User',UserSchema);
+exports.User = mongoose.model('Movie',movieSchema);

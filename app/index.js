@@ -17,21 +17,22 @@ var user = require("./client.js")
 
 //REST method
 
-server.get('/film/popular', film.popular);
-server.get('/film/view/id:',film.view);
-server.post('/register', user.register);
-server.post('/login', user.login);
-server.del('/del', user.deleteuser);
-server.put('/update', user.upUser);
+server.get('/popular', film.getAllPopular)
+server.post('/popular', film.addPopular)
 
-var port = process.env.PORT;
-server.listen(port, function(err){
-    if(eer)
-    console.error(eer);
-    else
-    console.log("Server is online");
+server.get('/popular/:id', film.getPopularItem)
+server.del('/popular/:id', film.deletePopularItem)
+server.put('')
 
-});
+server.get('/films/:id:',film.getFilm)
+server.post('/users', user.register)
+//server.post('/login', user.login);
+
+
+server.del('/users/:username', user.deleteUser)
+server.put('/users/:username', user.updateUser)
+
+//connecting to port
 
 var port = process.env.PORT || 8080;
 server.listen(port, function(eer){
