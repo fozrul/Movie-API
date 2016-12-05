@@ -1,6 +1,6 @@
 // creates instance using restify
 
-require ("./mongoose.js");
+require (`mongoose.js`);
 var restify = require ('restify');
 var server = restify.createServer();
 
@@ -22,12 +22,10 @@ server.post('/popular', film.addPopular)
 
 server.get('/popular/:id', film.getPopularItem)
 server.del('/popular/:id', film.deletePopularItem)
-server.put('')
+server.put('/popular/:id', film.updatePopularItem)
 
 server.get('/films/:id:',film.getFilm)
 server.post('/users', user.register)
-//server.post('/login', user.login);
-
 
 server.del('/users/:username', user.deleteUser)
 server.put('/users/:username', user.updateUser)

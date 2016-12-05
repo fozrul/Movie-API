@@ -28,7 +28,7 @@ exports.popular = function(completion){
 exports.view = function(req, res, next){
     var x = req.params['id:']
     var mdata
-    unirest.get("https://api.themoviedb.org/3/movie/"+ x + key)
+    unirest.get(`https://api.themoviedb.org/3/movie/`+ x + key)
     .end(function(resul){
         mdata = result.raw_body;
         mdata = JSON.parse(mdata)
