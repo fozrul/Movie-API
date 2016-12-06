@@ -1,13 +1,13 @@
 // creates instance using restify
 
 // require ("mongoose.js");
-var restify = require ('restify');
-var server = restify.createServer();
+var restify = require ('restify')
+var server = restify.createServer()
 
 // imports plugins
 
-server.use(restify.queryParser());
-server.use(restify.bodyParser());
+server.use(restify.queryParser())
+server.use(restify.bodyParser())
 server.use(restify.CORS());
 
 // imports custome module
@@ -47,11 +47,11 @@ server.post('/popular', (req, res, next) => {
 
 //connecting to port
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8080
 server.listen(port, function(eer){
     if(eer)
     console.error(err);
     else
-    console.log("Server online");
+    console.log("Server online")
 
 });

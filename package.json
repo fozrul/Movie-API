@@ -10,6 +10,8 @@
     "restify": "^4.3.0",
     "unirest": "^0.5.1",
     "mongodb": "^2.2.12",
+    "file-system":"^2.2.2",
+    "node-persist":"^2.0.7",
     "bcrypt": "^0.8.7"
   },
   "devDependencies": {
