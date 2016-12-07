@@ -1,28 +1,27 @@
 {
-  "name": "movieapi",
-  "version": "1.0.0",
-  "main": "index.js",
-  "description": "Movie API",
-  "dependencies": {
-    "request": "^2.79.0",
-    "mongoose": "^4.7.0",
-    "require": "^2.4.20",
-    "restify": "^4.3.0",
-    "unirest": "^0.5.1",
-    "mongodb": "^2.2.12",
-    "file-system":"^2.2.2",
-    "node-persist":"^2.0.7",
-    "bcrypt": "^0.8.7"
-  },
-  "devDependencies": {
-    "eslint": "^3.11.1"
-  },
-  "scripts": {
-    "test": "film"
-  },
-  "keywords": [
-    "movie"
-  ],
-  "author": "Fozrul Islam",
-  "license": "MIT"
+    "name": "movieapi",
+    "version": "1.0.0",
+    "main": "index.js",
+    "description": "Movie API",
+    "dependencies": {
+        "request": "^2.79.0",
+        "mongoose": "^2.2.12",
+        "require": "^2.4.20",
+        "restify": "^4.3.0",
+        "unirest": "^0.5.1",
+        "mongodb": "^2.2.12",
+        "file-system": "^2.2.2",
+        "node-persist": "^2.0.7"
+    },
+    "devDependencies": {
+        "eslint": "^3.11.1"
+    },
+    "scripts": {
+        "test": "film"
+    },
+    "keywords": [
+        "movie"
+    ],
+    "author": "Fozrul Islam",
+    "license": "MIT"
 }

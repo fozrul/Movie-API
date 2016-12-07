@@ -17,13 +17,9 @@ exports.addMovie = function(movie, callback) {
             return callback(Error('movie not found'))
         }
 
-        const movie = {
-                title: json.results[0].title,
-                popularity: json.results[0].popularity,
-                overview: json.results[0].overview
-            }
-            // const results = json.results[0].title
-        console.log(movie)
+        const movie = []
+        const results = JSON.parse(body).items
+        console.log(body)
 
         // for (let i = 0; i < results.length; i++) {
         //     const movie = {
@@ -33,7 +29,7 @@ exports.addMovie = function(movie, callback) {
         //     }
         //     movie.push(movie)
         // }
-        storage.setItemSync({ movie })
-        return callback(movie, "movie")
+        // storage.setItemSync(movie.body, movie)
+        // return callback(body, "data")
     })
 }

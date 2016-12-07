@@ -40,13 +40,12 @@ exports.view = function(req, res, next){
     .end(function(resul){
         mdata = result.raw_body;
         mdata = JSON.parse(mdata)
-
         if(mdata){
-                console.log("Success")
-                // console.log(pdata)
-                completion(mdata)
-            }else{
-                console.log("Error")
-            }
-        })
+            console.log("Success")
+            // console.log(pdata)
+            completion(mdata)
+        } else {
+            console.log("Error")
+        }
+    })
 };
