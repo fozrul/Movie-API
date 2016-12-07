@@ -4,11 +4,11 @@ const request = require('request')
 
 const storage = require('node-persist')
 
-key = 'fef1753927fd3fd57cb0d1ef20a63fb8'
+
 storage.initSync()
 
-exports.addMovie = function(popular, callback) {
-	const url = `https://api.themoviedb.org/3/movie/popular?api_key=${key}`
+exports.addMovie = function(movie, callback) {
+	const url = `https://api.themoviedb.org/3/search/movie?api_key=fef1753927fd3fd57cb0d1ef20a63fb8&query=Suicide%20Squad`
 	request.get( url, (err, res, body) => {
 		if (err) return callback(Error('could not complete request'))
 		const json = JSON.parse(body)
@@ -17,11 +17,11 @@ exports.addMovie = function(popular, callback) {
 			return callback(Error('movie not found'))
 		}
 		const data = {
-			title: `${json.items[0].volumeInfo.title}: ${json.items[0].volumeInfo.subtitle}`,
-			overview: json.items[0].volumeInfo.overview[0],
-			popularity: json.items[0].volumeInfo.popularity
+			title: title,
+			overview: overview,
+			popularity: popularity
 		}
-		storage.setItemSync(popular, data)
+		storage.setItemSync(movie.data)
 		return callback(null, data)
 	})
 }
