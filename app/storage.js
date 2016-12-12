@@ -34,6 +34,6 @@ exports.addMovie = function(movie, callback) {
         //     movie.push(movie)
         // }
         storage.setItemSync({ movie })
-        return callback(movie, "movie")
+        return callback(null, movie)
     })
 }

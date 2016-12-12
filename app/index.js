@@ -1,19 +1,21 @@
 // creates instance using restify
 
 // require ("mongoose.js");
-var restify = require ('restify')
+var restify = require('restify')
 var server = restify.createServer()
+
 
 // imports plugins
 
 server.use(restify.queryParser())
 server.use(restify.bodyParser())
-server.use(restify.CORS());
+server.use(restify.CORS())
 
 // imports custome module
-
-var film = require("./controller.js")
-var user = require("./client.js")
+const authorisation = require('./authorisation.js')
+const users = require('./users')
+var film = require('./controller.js')
+    //var user = require("./client.js")
 
 //REST method
 
@@ -34,6 +36,7 @@ server.post('/popular', (req, res, next) => {
     })
 })
 
+server.post('/users', users.validateUser, users.add)
 
 // server.get('/popular/:id', film.getPopularItem)
 // server.del('/popular/:id', film.deletePopularItem)
@@ -48,10 +51,10 @@ server.post('/popular', (req, res, next) => {
 //connecting to port
 
 var port = process.env.PORT || 8080
-server.listen(port, function(eer){
-    if(eer)
-    console.error(err);
+server.listen(port, function(eer) {
+    if (eer)
+        console.error(err);
     else
-    console.log("Server online")
+        console.log("Server online")
 
-});
+})
