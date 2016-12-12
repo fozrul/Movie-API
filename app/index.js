@@ -36,7 +36,7 @@ server.post('/popular', (req, res, next) => {
     })
 })
 
-server.post('/users', users.validateUser, users.add)
+server.post('/users', users.validateUser, users.add) // add a new user to the DB (pending confirmation)
 
 // server.get('/popular/:id', film.getPopularItem)
 // server.del('/popular/:id', film.deletePopularItem)
