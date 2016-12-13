@@ -3,7 +3,6 @@
 // file to manage the actual connections to the database
 
 const storage = require('node-persist')
-storage.initSync()
 
 exports.usersConnection = function usersConnection(res, callback) {
 

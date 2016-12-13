@@ -2,7 +2,7 @@
 
 const file = require('./storage')
     // passing a valid ISBN
-file.addMovie('Suicide', (err, movie) => {
+file.addMovie('dead pool', (err, movie) => {
     if (err) {
         console.log('ERROR')
         console.log(err.message)
