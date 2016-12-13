@@ -28,7 +28,7 @@ exports.add = function add(req, res, next) {
     usersConnection(res, usersDB => {
 
         // first check that the user does not already exist
-        if (usersDB.getItemSync(users.username)) return res.send(400, { message: 'Username taken.' })
+        if (usersDB.getItemSync(user.username)) return res.send(400, { message: 'Username taken.' })
 
         // create a code and save as a *pending* user
         user.code = uuid()
