@@ -15,7 +15,7 @@ server.use(restify.queryParser())
 server.use(restify.bodyParser())
 server.use(restify.authorizationParser())
 
-//server.get('/moviesearch', moviedbapi.doMovieSearch)
+
 
 server.post('/users', users.validateUser, users.add) // add a new user to the DB (pending confirmation)
 server.post('/users/confirm/:username', users.validateCode, users.confirm) // confirm a pending user
