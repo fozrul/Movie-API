@@ -5,7 +5,7 @@ const usersConnection = require('./db').usersConnection // this uses the db.js f
 exports.authorize = function authorize(req, res, next) { // requires authorisation
     const auth = req.authorization
 
-    if (!auth || !auth.basic) return res.send(401, { message: 'Need basic authorization header' })
+    if (!auth || !auth.basic) return res.send(401, { message: 'Need basic authorization header' }) // sets authentication
 
     const username = auth.basic.username // uses username parameters    
     const password = auth.basic.password // uses password parameters

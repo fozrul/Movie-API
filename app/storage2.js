@@ -13,7 +13,7 @@ exports.addMovie = function(movie, callback) {
     const url = `https://api.themoviedb.org/3/search/movie?api_key=fef1753927fd3fd57cb0d1ef20a63fb8&query=Suicide%20Squad`
     request.get(url, (err, res, body) => {
         if (err) return callback(Error('could not complete request'))
-        const json = JSON.parse(body)
+        const json = JSON.parse(body) // returns the body of the website
         if (json.totalbody === 0) {
             console.log('no results')
             return callback(Error('movie not found'))
