@@ -36,17 +36,18 @@ exports.doMovieSearch = (req, res, next) => { //q is the search parameter
 
             console.log(results)
 
-            res.send({ movie: results })
+            const movie = {
+                title: results.title,
+                popularity: results.popularity,
+                overview: results.overview
+            }
+
+            res.send({ movie: movie })
         } else {
             res.send(501, { message: 'Problem with Movie API query.', error: error, statusCode: response.statusCode })
         }
     })
 }
-
-
-
-
-
 
 exports.popular = function(completion) {
     unirest.get(`https://api.themoviedb.org/3/movie/popular?api_key=${key}`)
