@@ -1,6 +1,6 @@
 'use strict'
 
-const file = require('./storage')
+const file = require('./storage2')
     // passing a valid movie name
 file.addMovie('Interstellar', (err, movie) => {
     if (err) {
