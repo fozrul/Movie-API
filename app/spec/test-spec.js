@@ -2,6 +2,7 @@
 
 const request = require('request')
 
+// starts the api
 search('javascript', (err, data) => {
     console.log('START')
     if (err) {
@@ -12,6 +13,7 @@ search('javascript', (err, data) => {
     console.log('END')
 })
 
+// searches in the query
 function search(query, callback) {
     searchByString(query).then(data => {
         console.log('search query complete')
@@ -23,6 +25,7 @@ function search(query, callback) {
     })
 }
 
+// brings back the movie popular data
 function searchByString(query) {
     return new Promise((resolve, reject) => {
         const url = `https://api.themoviedb.org/3/movie/popular?api_key=fef1753927fd3fd57cb0d1ef20a63fb8`
