@@ -17,7 +17,7 @@ var mongoose = require('mongoose'),
 exports.popular = function(completion) {
     unirest.get(`https://api.themoviedb.org/3/movie/popular?api_key=${key}`)
         .end(function(result) {
-            pdata = result.raw_body
+            pdata = result.raw_body // brings back the result in raw data
             pdata = JSON.parse(pdata)
             pdata = pdata.results
 
@@ -36,7 +36,7 @@ exports.popular = function(completion) {
 exports.view = function(req, res, next) {
     var x = req.params['id:']
     var mdata
-    unirest.get(`https://api.themoviedb.org/3/movie/` + x + key)
+    unirest.get(`https://api.themoviedb.org/3/movie/` + x + key) // searches through the id in the moviedb
         .end(function(resul) {
             mdata = result.raw_body;
             mdata = JSON.parse(mdata)
