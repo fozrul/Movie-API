@@ -1,7 +1,7 @@
 {
     "name": "movieapi",
     "version": "1.0.0",
-    "main": "popular.js",
+    "main": "index.js",
     "description": "Movie API",
     "dependencies": {
         "request": "^2.79.0",
