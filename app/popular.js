@@ -22,6 +22,7 @@ var film = require('./controller.js')
 
 // server.get('/popular', film.getAllPopular)
 
+server.get('/controller', film.doMovieSearch)
 
 server.get('/popular', (req, res, next) => {
     film.popular((result) => {

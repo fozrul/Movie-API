@@ -1,3 +1,6 @@
+'use strict'
+
+const request = require('request')
 var unirest = require('unirest')
 var mongoose = require('mongoose'),
     key = 'fef1753927fd3fd57cb0d1ef20a63fb8'
@@ -14,10 +17,41 @@ var mongoose = require('mongoose'),
  * @param {string} str: string argumnet that will be shown in message
  */
 
+
+'use strict'
+
+
+exports.doMovieSearch = (req, res, next) => { //q is the search parameter
+
+    //search movie by ID along with API key
+
+    const q = req.query.q // get the search term from the URL querystring
+
+    const url = `https://api.themoviedb.org/3/movie/${q}?api_key=fef1753927fd3fd57cb0d1ef20a63fb8`
+
+    request.get(url, function(error, response, body) {
+        if (!error && response.statusCode === 200) {
+
+            const results = JSON.parse(body)
+
+            console.log(results)
+
+            res.send({ movie: results })
+        } else {
+            res.send(501, { message: 'Problem with Movie API query.', error: error, statusCode: response.statusCode })
+        }
+    })
+}
+
+
+
+
+
+
 exports.popular = function(completion) {
     unirest.get(`https://api.themoviedb.org/3/movie/popular?api_key=${key}`)
         .end(function(result) {
-            pdata = result.raw_body // brings back the result in raw data
+            let pdata = result.raw_body // brings back the result in raw data
             pdata = JSON.parse(pdata)
             pdata = pdata.results
 
