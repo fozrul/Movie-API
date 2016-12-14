@@ -1,7 +1,7 @@
 {
     "name": "movieapi",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "app/popular.js",
     "description": "Movie API",
     "dependencies": {
         "request": "^2.79.0",
@@ -17,7 +17,8 @@
         "eslint": "^3.11.1"
     },
     "scripts": {
-        "test": "film"
+        "test": "film",
+        "start": "node app/popular.js"
     },
     "keywords": [
         "movie"
