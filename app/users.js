@@ -21,6 +21,7 @@ exports.validateCode = function validateCode(req, res, next) {
     return next()
 }
 
+// allows users to be added
 exports.add = function add(req, res, next) {
     // body includes username and password details
     const user = req.body
@@ -43,6 +44,7 @@ exports.add = function add(req, res, next) {
     })
 }
 
+// authentication is listed below so it allows me to confirm users
 exports.confirm = function confirm(req, res, next) {
 
     // username came as part of the URL
@@ -72,6 +74,7 @@ exports.confirm = function confirm(req, res, next) {
     })
 }
 
+// delete function is set below so it allows me to delete a user
 exports.delete = function delete_(req, res, next) {
 
     // username came as part of the URL
