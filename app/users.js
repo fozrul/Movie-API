@@ -79,7 +79,7 @@ exports.delete = function delete_(req, res, next) {
 
     // username must match authorization username
     const authuser = req.authorization.basic.username
-    if (username !== authuser) return res.send(400, { message: 'You can\'t delete other users!' })
+    if (username == authuser) return res.send(400, { message: 'You can\'t delete other users!' })
 
     // if it matches then connect to the store and delete
     usersConnection(res, usersDB => {

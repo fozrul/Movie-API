@@ -5,6 +5,7 @@
 const storage = require('node-persist')
 storage.initSync()
 
+// exports the user connection
 exports.usersConnection = function usersConnection(res, callback) {
 
 

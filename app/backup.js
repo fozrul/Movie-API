@@ -95,6 +95,7 @@ server.put('/users/:username', (req, res, next) => {
     })
 })
 
+// defines what port I am using
 var port = process.env.PORT || 8080
 server.listen(port, function(eer) {
     if (eer)

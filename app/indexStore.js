@@ -1,7 +1,7 @@
 'use strict'
 
 const file = require('./storage')
-    // passing a valid ISBN
+    // passing a valid movie name
 file.addMovie('dead pool', (err, movie) => {
     if (err) {
         console.log('ERROR')

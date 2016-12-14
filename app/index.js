@@ -3,10 +3,12 @@
 const restify = require('restify')
 const server = restify.createServer()
 
-
+// uses these modules 
 
 const authorization = require('./authorisation')
 const users = require('./users')
+
+// server usage
 
 server.use(restify.fullResponse())
 server.use(restify.queryParser())
